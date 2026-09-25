@@ -169,8 +169,16 @@
 										"directory": {
 											"value": "@pipeline().parameters.table",
 											"type": "Expression"
-										}
+										},
+										"file": "@concat(pipeline().parameters.table,'_',variables('Current_Time'))"
 									}
+								},
+								"logStorageSettings": {
+									"linkedServiceName": {
+										"referenceName": "AzureDataLakeStorageConnector",
+										"type": "LinkedServiceReference"
+									},
+									"path": "bronze/logs"
 								},
 								"enableLogging": true,
 								"storeSettings": {
