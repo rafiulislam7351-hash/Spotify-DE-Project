@@ -5,9 +5,17 @@
 			{
 				"name": "AzureSqlToAdls",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "cdc_last",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "Current_Time",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -62,7 +70,11 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "bronze",
-							"directory": "Users"
+							"directory": "Users",
+							"file": {
+								"value": "@{pipeline().parameters.table,'_',",
+								"type": "Expression"
+							}
 						}
 					}
 				]
@@ -102,6 +114,23 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "Current_Time",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Current_Time",
+					"value": {
+						"value": "@utcNow()",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
@@ -113,6 +142,11 @@
 			},
 			"cdc": {
 				"type": "string"
+			}
+		},
+		"variables": {
+			"Current_Time": {
+				"type": "String"
 			}
 		},
 		"annotations": []
