@@ -1,0 +1,15 @@
+{
+	"name": "orchestratorspotify",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7cea2a92-c19c-4b92-b77b-bfbe89088404",
+		"tenantId": "37e4118b-2371-46bd-b640-2adf387c272f"
+	}
+}
