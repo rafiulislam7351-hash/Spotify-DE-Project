@@ -59,7 +59,11 @@
 				"outputs": [
 					{
 						"referenceName": "bronze_data",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "bronze",
+							"directory": "Users"
+						}
 					}
 				]
 			},
