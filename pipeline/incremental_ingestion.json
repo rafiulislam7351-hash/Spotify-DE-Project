@@ -131,11 +131,22 @@
 				}
 			},
 			{
-				"name": "If Condition1",
+				"name": "IfElseIncreament",
 				"type": "IfCondition",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "AzureSqlToAdls",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
+					"expression": {
+						"value": "@greater(activity('AzureSqlToAdls').output.dataRead,0)",
+						"type": "Expression"
+					},
 					"ifTrueActivities": [
 						{
 							"name": "update_cdc",
