@@ -5,8 +5,6 @@
 			{
 				"name": "AzureSqlToAdls",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "cdc_last",
@@ -72,7 +70,7 @@
 							"container": "bronze",
 							"directory": "Users",
 							"file": {
-								"value": "@{pipeline().parameters.table,'_',",
+								"value": "@concat(pipeline().parameters.table,'_',variables('Current_Time'))",
 								"type": "Expression"
 							}
 						}
