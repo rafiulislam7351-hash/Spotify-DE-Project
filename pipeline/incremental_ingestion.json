@@ -5,6 +5,8 @@
 			{
 				"name": "AzureSqlToAdls",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -55,8 +57,14 @@
 					},
 					"dataset": {
 						"referenceName": "cdc",
-						"type": "DatasetReference"
-					}
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "bronze",
+							"directory": "CDC",
+							"file": "cdc.json"
+						}
+					},
+					"firstRowOnly": false
 				}
 			}
 		],
