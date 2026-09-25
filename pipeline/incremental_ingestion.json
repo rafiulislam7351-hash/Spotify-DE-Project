@@ -147,6 +147,40 @@
 						"value": "@greater(activity('AzureSqlToAdls').output.dataRead,0)",
 						"type": "Expression"
 					},
+					"ifFalseActivities": [
+						{
+							"name": "DeleteEmptyFile",
+							"type": "Delete",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"dataset": {
+									"referenceName": "bronze_data",
+									"type": "DatasetReference",
+									"parameters": {
+										"container": "bronze",
+										"directory": {
+											"value": "@pipeline().parameters.table",
+											"type": "Expression"
+										}
+									}
+								},
+								"enableLogging": true,
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								}
+							}
+						}
+					],
 					"ifTrueActivities": [
 						{
 							"name": "update_cdc",
