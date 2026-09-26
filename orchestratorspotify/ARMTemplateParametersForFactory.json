@@ -5,11 +5,14 @@
 		"factoryName": {
 			"value": "orchestratorspotify"
 		},
+		"AzureDataLakeStorageConnector_accountKey": {
+			"value": ""
+		},
 		"AzureSqlDatabaseConnector_password": {
 			"value": ""
 		},
-		"AzureDataLakeStorageConnector_accountKey": {
-			"value": ""
+		"AzureDataLakeStorageConnector_properties_typeProperties_url": {
+			"value": "https://projectstoragespt.dfs.core.windows.net/"
 		},
 		"AzureSqlDatabaseConnector_properties_typeProperties_server": {
 			"value": "spotifyprojectserverde.database.windows.net"
@@ -20,8 +23,8 @@
 		"AzureSqlDatabaseConnector_properties_typeProperties_userName": {
 			"value": "rafiul7351"
 		},
-		"AzureDataLakeStorageConnector_properties_typeProperties_url": {
-			"value": "https://projectstoragespt.dfs.core.windows.net/"
+		"HttpServer_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
 		}
 	}
 }

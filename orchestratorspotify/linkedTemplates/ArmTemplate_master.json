@@ -7,13 +7,17 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "orchestratorspotify"
 		},
+		"AzureDataLakeStorageConnector_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageConnector'"
+		},
 		"AzureSqlDatabaseConnector_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AzureSqlDatabaseConnector'"
 		},
-		"AzureDataLakeStorageConnector_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageConnector'"
+		"AzureDataLakeStorageConnector_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://projectstoragespt.dfs.core.windows.net/"
 		},
 		"AzureSqlDatabaseConnector_properties_typeProperties_server": {
 			"type": "string",
@@ -27,9 +31,9 @@
 			"type": "string",
 			"defaultValue": "rafiul7351"
 		},
-		"AzureDataLakeStorageConnector_properties_typeProperties_url": {
+		"HttpServer_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://projectstoragespt.dfs.core.windows.net/"
+			"defaultValue": "https://raw.githubusercontent.com/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -58,11 +62,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureDataLakeStorageConnector_accountKey": {
+						"value": "[parameters('AzureDataLakeStorageConnector_accountKey')]"
+					},
 					"AzureSqlDatabaseConnector_password": {
 						"value": "[parameters('AzureSqlDatabaseConnector_password')]"
 					},
-					"AzureDataLakeStorageConnector_accountKey": {
-						"value": "[parameters('AzureDataLakeStorageConnector_accountKey')]"
+					"AzureDataLakeStorageConnector_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageConnector_properties_typeProperties_url')]"
 					},
 					"AzureSqlDatabaseConnector_properties_typeProperties_server": {
 						"value": "[parameters('AzureSqlDatabaseConnector_properties_typeProperties_server')]"
@@ -73,8 +80,8 @@
 					"AzureSqlDatabaseConnector_properties_typeProperties_userName": {
 						"value": "[parameters('AzureSqlDatabaseConnector_properties_typeProperties_userName')]"
 					},
-					"AzureDataLakeStorageConnector_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorageConnector_properties_typeProperties_url')]"
+					"HttpServer_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer_properties_typeProperties_url')]"
 					}
 				}
 			},
