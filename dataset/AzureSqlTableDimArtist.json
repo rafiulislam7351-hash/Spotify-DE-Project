@@ -1,0 +1,16 @@
+{
+	"name": "AzureSqlTableDimArtist",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseConnector",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DimArtist"
+		}
+	}
+}
