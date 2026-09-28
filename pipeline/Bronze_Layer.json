@@ -148,6 +148,29 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "Execute Pipelinesilver",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "ForEachParams",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "silverGold",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"annotations": []
