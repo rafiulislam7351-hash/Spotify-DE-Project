@@ -1,0 +1,12 @@
+resources:
+  pipelines:
+    pipeline_gold_pipeline:
+      name: gold_pipeline
+      libraries:
+        - glob:
+            include: /Workspace/Users/rafiulislam7351@outlook.com/Spotify_Azure_Data_Engineering_Project/spotify_dab/src/gold/DLT/gold_pipeline/transformations/**
+      schema: gold
+      photon: true
+      catalog: spotify_project
+      serverless: true
+      root_path: /Workspace/Users/rafiulislam7351@outlook.com/Spotify_Azure_Data_Engineering_Project/spotify_dab/src/gold/DLT/gold_pipeline
